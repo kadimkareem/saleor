@@ -1,0 +1,11 @@
+1- [*] collect last 500 issues
+1.How do the number of issues evolve over time?
+2.Are there any periods in which we get more issues?
+3.Is there anyone who reports more issues than others?
+4.What is the most popular category (label)?
+5.Classifying the issues is an essential task for any project, including Saleor.
+ Based on the descriptions of the issues alongside the labels you obtained, 
+ use any model from HuggingFace to automatically classify the issues into different labels.
+In other words, the input to your solution is the description of an issue,
+and the output will be a label for that issue. 
+Report the methodology you followed and the performance of your evaluated model in an adequate way.

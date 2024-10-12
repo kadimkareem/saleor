@@ -1,4 +1,8 @@
 import json
+
+import pandas as pd
+
+from issue_model import model_from_json
 def get_github_access_token():
     with open('access_token.json','r') as access_token_json_file:
         data=json.load(access_token_json_file)
@@ -13,9 +17,8 @@ def read_json(path):
     with open(path,'r') as issues_json:
         data = json.load(issues_json)
         return data
-def read_json_pandas():
     
-    issues=pd.read_json('./outputs/issues_json.json')
+
 def main():
     print(get_github_access_token())
 

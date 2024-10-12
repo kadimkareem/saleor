@@ -1,17 +1,12 @@
-import pandas as pd
-from transformers import AutoTokenizer, BertForMaskedLM
 import torch
-from transformers import BertTokenizer
+from transformers import DistilBertTokenizer, DistilBertForSequenceClassification
 
-from task4 import get_most_popular_labels
+tokenizer = DistilBertTokenizer.from_pretrained("distilbert-base-uncased-finetuned-sst-2-english")
+model = DistilBertForSequenceClassification.from_pretrained("distilbert-base-uncased-finetuned-sst-2-english")
 
+inputs = tokenizer("Hello, my dog is cute", return_tensors="pt")
+with torch.no_grad():
+    logits = model(**inputs).logits
 
-data=pd.read_json('./outputs/issues_cleanded_label.json')
- 
-df = pd.DataFrame(data)
- 
-print(df['labels'].iloc[1:5])
-# dd=pd.DataFrame(labels['count'],columns=['label'])
-# descriptions =df['body']
-# print(dd)
-
+predicted_class_id = logits.argmax().item()
+model.config.id2label[predicted_class_id]

@@ -5,7 +5,7 @@ import aiofiles
 from common import get_github_access_token
 
 issues_url = 'https://api.github.com/repos/saleor/saleor/issues'
-leables_url = 'https://api.github.com/repos/saleor/saleor/labels'
+
 headers = {
     "Accept": "application/vnd.github+json",
     "Authorization": f"Bearer {get_github_access_token()}"
@@ -56,7 +56,7 @@ async def save_json(data,file_name:str):
 async def main():
     data = await fetch_all_issues(urt_str=leables_url)
     if data:
-        await save_json(data,'lables')
+        await save_json(data,'issues_url')
 
 if __name__ == '__main__':
     asyncio.run(main())

@@ -9,7 +9,7 @@ issues=pd.read_json('./outputs/issues_json.json')
 def get_top_issues_over_time():
     df=pd.DataFrame(issues)
     df['created_at'] = pd.to_datetime(df['created_at'])
-    # Group by date to count the number of issues created per day
+    # group by date to count the number of issues created per day
     issues_per_day = df.groupby(df['created_at'].dt.date).size()
     #returns the index for the maximum value in each column
     max_issues_date = issues_per_day.idxmax()
@@ -22,11 +22,7 @@ def get_top_issues_over_time():
  
 
 def plot_created_at():
-    df=pd.DataFrame(issues)
-    #clean the datetime data #make it timeseries
-    df['created_at'] =pd.to_datetime(issues['created_at']) 
-    #remove time
-    plt.plot(df['created_at'].dt.date)
+    plt.plot(cleaned_date_data())
     plt.show()
     
  

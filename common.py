@@ -7,6 +7,15 @@ def get_github_access_token():
         return access_token
 
 
+        
+def read_json(path):
+    '''read json file'''
+    with open(path,'r') as issues_json:
+        data = json.load(issues_json)
+        return data
+def read_json_pandas():
+    
+    issues=pd.read_json('./outputs/issues_json.json')
 def main():
     print(get_github_access_token())
 

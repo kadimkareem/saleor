@@ -1,12 +1,9 @@
 '''Are there any periods in which we get more issues?'''
 import pandas as pd
 import matplotlib.pylab as plt
-
 from plot_data import bar_plot
  
 issues=pd.read_json('./dataset/issues_json.json')
-
- 
 
  
 def cleaned_date_data():
@@ -17,19 +14,6 @@ def cleaned_date_data():
     #remove time
     return df['created_at'].dt.date
       
- 
-def plot_top_issues():
-    data=get_issue_count_per_day()
-    plt.figure(figsize=(10, 6))
-    plt.plot(data['created_at'],data['count'], marker='o', linestyle='-')
-    plt.title('top issues per day')
-    plt.xlabel('date')
-    plt.ylabel('issues count')
-    plt.grid(True)
-    plt.xticks(rotation=45)
-    plt.tight_layout()
-    plt.show()
- 
     
 def get_issue_count_per_day():
     '''get the issue count per day'''
@@ -58,15 +42,7 @@ def periods_with_higher_weekly_average():
              image_name='periods_with_higher_weekly_average',
              data=issues_per_week.describe()
              )
-    plt.figure(figsize=(10, 6))
-    issues_per_week['count'].plot(kind='bar')
-    plt.title('top issues per week')
-    plt.xlabel('date')
-    plt.ylabel('issues count')
-    plt.grid(True)
-    plt.xticks(rotation=45)
-    plt.tight_layout()
-    plt.show()
+
     #weekly average 
     mean_data=issues_per_week['count'].mean()
     print(f'mean issues per week {mean_data} \n')
@@ -80,15 +56,5 @@ def periods_with_higher_weekly_average():
     print(f' high weekly issue periods {high_weekly_issue_periods} \n')
     print(f'high issue bigger than average {high_issue_bigger_than_average} \n')
     
-   
     
-        
-    
- 
-  
-    
-    
-    
-
 periods_with_higher_weekly_average()
-#plot_top_issues()

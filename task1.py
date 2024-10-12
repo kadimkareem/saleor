@@ -1,13 +1,11 @@
 '''How do the number of issues evolve over time?'''
 
-
 from  datetime import datetime 
 import matplotlib.pylab as plot
 from typing import List 
 from common import read_json
 from issue_model import Issue, model_from_json
 import pandas as pandas
-
 from plot_data import bar_plot
 
 json_file=read_json(path='./dataset/issues_json.json')
@@ -41,23 +39,6 @@ def measure_evolvation(timedelta:str,title:str):
               image_name=f'{title}_daily_evolve',xdata=evolvation.index,ydata=evolvation['count'],label=f'{len(evolvation.index)}',data=describe)
     
 
-
- 
-    
-
-def basic_plot(title:str,xlabel:str,ylabel:str,imge_name,xdata:any,ydata:any,label:str):
-    plot.figure(figsize=(10, 6),)
-    plot.plot(xdata,ydata, marker='.', linestyle='-')
-    plot.title(title)
-    plot.xlabel(xlabel=xlabel)
-    plot.ylabel(ylabel=ylabel)
-    plot.grid(True)
-    plot.savefig(f'./plots/{imge_name}.png')
-    plot.show()
-    
-   
-
- 
 measure_evolvation('D','daily')
 #measure_evolvation('W','weakly')
 #measure_evolvation('ME','monthly')

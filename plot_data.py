@@ -44,3 +44,14 @@ def bar_plot(title: str, xlabel: str, ylabel: str, image_name: str, xdata, ydata
     plot.savefig(f'./plots/{image_name}.png')
     plot.show()
   
+  
+  
+def basic_plot(title:str,xlabel:str,ylabel:str,imge_name,xdata:any,ydata:any,label:str):
+    plot.figure(figsize=(10, 6),)
+    plot.plot(xdata,ydata, marker='.', linestyle='-')
+    plot.title(title)
+    plot.xlabel(xlabel=xlabel)
+    plot.ylabel(ylabel=ylabel)
+    plot.grid(True)
+    plot.savefig(f'./plots/{imge_name}.png')
+    plot.show()

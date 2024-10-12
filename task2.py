@@ -6,25 +6,9 @@ issues=pd.read_json('./outputs/issues_json.json')
 
 #get top issues over time
 ''' filter the data to get top issues over time '''
-def get_top_issues_over_time():
-    df=pd.DataFrame(issues)
-    df['created_at'] = pd.to_datetime(df['created_at'])
-    # group by date to count the number of issues created per day
-    issues_per_day = df.groupby(df['created_at'].dt.date).size()
-    #returns the index for the maximum value in each column
-    max_issues_date = issues_per_day.idxmax()
-    max_issues_count = issues_per_day.max()
-   
-    print(f'max_issues_date {max_issues_date} \n')
-    print(f'ax_issues_coun {max_issues_count} \n')
-    # TODO it calcualte dates not issues (max date not max issue)
-            
- 
 
-def plot_created_at():
-    plt.plot(cleaned_date_data())
-    plt.show()
-    
+            
+
  
 def cleaned_date_data():
     data=pd.DataFrame(issues)
@@ -110,9 +94,10 @@ def periods_with_higher_weekly_average():
 
 
 def main():
-    get_top_issues_over_time()
+
     #plot_top_issues()
     periods_with_higher_weekly_average()
+    #get_issue_count_per_day()
     
     
 

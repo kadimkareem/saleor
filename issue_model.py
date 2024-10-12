@@ -67,7 +67,7 @@ class Issue(BaseModel):
     number: int
     title: str
     user: User
-    labels: List[Label]
+    labels: List[Label] | Label
     state: str
     locked: bool
     assignee: Optional[User] = None

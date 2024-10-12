@@ -10,7 +10,7 @@ data=pd.read_json('./outputs/issues_cleanded_label.json')
  
 df = pd.DataFrame(data)
  
-print(labels['count'])
+print(df['labels'].iloc[1:5])
 # dd=pd.DataFrame(labels['count'],columns=['label'])
 # descriptions =df['body']
 # print(dd)

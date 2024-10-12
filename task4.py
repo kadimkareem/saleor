@@ -4,12 +4,12 @@ import matplotlib.pylab as plt
 
 from issue_model import Label, model_from_json, model_to_json
 
-issues= model_from_json('./outputs/issues_cleanded_label.json')
-data=pd.read_json('./outputs/issues_cleanded_label.json')
+issues= model_from_json('.dataset/issues_cleanded_label.json')
+data=pd.read_json('.dataset/issues_cleanded_label.json')
 df=pd.DataFrame(data)
 
 def clean_issue_labels():
-    issues= model_from_json(path='./outputs/issues_json.json')
+    issues= model_from_json(path='.dataset/issues_json.json')
     unpacked_labled_issue=[]
     for issue in issues:
         if len(issue.labels)>=1:

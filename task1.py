@@ -8,8 +8,8 @@ from common import read_json
 from issue_model import Issue, model_from_json
 import pandas as pandas
 
-json_file=read_json(path='./outputs/issues_json.json')
-issues:List[Issue]= model_from_json('./outputs/issues_json.json')
+json_file=read_json(path='.dataset/issues_json.json')
+issues:List[Issue]= model_from_json('.dataset/issues_json.json')
  
 def get_issues_creation_date()->list[datetime]:
     issues_creation_dates = [issue.created_at.replace(tzinfo=None) for issue in issues]

@@ -2,7 +2,7 @@
 import pandas as pd
 import matplotlib.pylab as plt
  
-issues=pd.read_json('./outputs/issues_json.json')
+issues=pd.read_json('.dataset/issues_json.json')
 
 #get top issues over time
 ''' filter the data to get top issues over time '''

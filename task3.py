@@ -2,7 +2,7 @@
 import pandas as pd
 
 
-issues=pd.read_json('.dataset/issues_json.json')
+issues=pd.read_json('./dataset/issues_json.json')
 
 
 def get_issues_by_user():

@@ -97,6 +97,6 @@ def model_from_json(path:str) ->List[Issue]:
 def model_to_json(model:List[Issue],file_name:str):
 
     data=[j.model_dump(mode='json') for j in model]
-    with open(f'.dataset/{file_name}.json','w') as json_file:
+    with open(f'./dataset/{file_name}.json','w') as json_file:
         json.dump(data,json_file,indent=4)
       

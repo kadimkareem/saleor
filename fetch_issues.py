@@ -47,7 +47,7 @@ async def fetch_all_issues(urt_str:str):
 
 async def save_json(data,file_name:str):
     if data:
-        async with aiofiles.open(f'.dataset/{file_name}.json', 'w') as file:
+        async with aiofiles.open(f'./dataset/{file_name}.json', 'w') as file:
             await file.write(json.dumps(data, indent=4))
         print("Data saved to issues_json.json")
     else:

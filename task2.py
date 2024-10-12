@@ -1,13 +1,12 @@
 '''Are there any periods in which we get more issues?'''
 import pandas as pd
 import matplotlib.pylab as plt
+
+from plot_data import bar_plot
  
-issues=pd.read_json('.dataset/issues_json.json')
+issues=pd.read_json('./dataset/issues_json.json')
 
-#get top issues over time
-''' filter the data to get top issues over time '''
-
-            
+ 
 
  
 def cleaned_date_data():
@@ -17,11 +16,10 @@ def cleaned_date_data():
     df['created_at'] =pd.to_datetime(data['created_at'])
     #remove time
     return df['created_at'].dt.date
-   
-     
+      
  
 def plot_top_issues():
-    data=get_issue_count_per_day( )
+    data=get_issue_count_per_day()
     plt.figure(figsize=(10, 6))
     plt.plot(data['created_at'],data['count'], marker='o', linestyle='-')
     plt.title('top issues per day')
@@ -40,15 +38,6 @@ def get_issue_count_per_day():
     # Count the occurrences of each row
     duplicate_issues = df.groupby(df.columns.tolist()).size().reset_index(name='count')
     duplicated_rows = duplicate_issues[duplicate_issues['count'] > 1]
-    duplicated_rows.plot(kind='bar')
-    plt.title('top issues per day')
-    plt.xlabel('date')
-    plt.ylabel('issues count')
-    plt.grid(True)
-    plt.xticks(rotation=45)
-    plt.tight_layout()
-    plt.show()
-    print(f' issues per day {duplicated_rows} \n')
     return duplicated_rows
 
  
@@ -60,6 +49,15 @@ def periods_with_higher_weekly_average():
     #sum issues per week
     issues_per_week=df.resample('W').sum()
     print(f'sum issues per week {issues_per_week}')
+    bar_plot(xdata=issues_per_week.index,
+             ydata=issues_per_week['count'],
+             title='periods_with_higher_weekly_average',
+             xlabel='date',
+             ylabel='count',
+             label=f'{len(issues_per_week.index)}',
+             image_name='periods_with_higher_weekly_average',
+             data=issues_per_week.describe()
+             )
     plt.figure(figsize=(10, 6))
     issues_per_week['count'].plot(kind='bar')
     plt.title('top issues per week')
@@ -92,14 +90,5 @@ def periods_with_higher_weekly_average():
     
     
 
-
-def main():
-
-    #plot_top_issues()
-    periods_with_higher_weekly_average()
-    #get_issue_count_per_day()
-    
-    
-
-if __name__=="__main__":
-    main()
+periods_with_higher_weekly_average()
+#plot_top_issues()

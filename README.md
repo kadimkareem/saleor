@@ -8,7 +8,7 @@
  
 
 1. **GitHub Access Token**
-The project contains an-issues dataset file fetched from GitHub on October 10, 2024. It requires an access token to obtain the issues data. I have already added mine, but if you need to fetch the latest data, you will have to use the GitHub API. To do this, you will need to obtain an "Access Token."
+The project contains dataset file fetched from GitHub on October 10, 2024. It requires an access token to obtain the issues data. I have already added mine, but if you need to fetch the latest data, you will have to use the GitHub API. To do this, you will need to obtain an "Access Token."
 
    to do this    
    - Visit [GitHub Personal Access Tokens](https://github.com/settings/tokens) and generate a new token with the necessary permissions (at     least read access to repository issues).

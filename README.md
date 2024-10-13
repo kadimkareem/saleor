@@ -12,9 +12,7 @@
    - Visit [GitHub Personal Access Tokens](https://github.com/settings/tokens) and generate a new token with the necessary permissions (at least read access to repository issues).
    - Save this token in a file called `access_token.json` in the root of your project directory. The file should look like this:
 
-   ```json {
-      "access_token": "your_github_token_here"
-   }```
+   ```json {"access_token": "your_github_token_here"}```
 
 2. **Install Python**:
 

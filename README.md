@@ -24,7 +24,6 @@ on mac ```bash source env/bin/activate ```
 
 4.	**You can run any of the scripts in the terminal with:**
 
-```bash
-    python scriptname.py```
+```bash python scriptname.py```
 
     

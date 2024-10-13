@@ -20,7 +20,7 @@ The project contains dataset file fetched from GitHub on October 10, 2024. It re
 
 
  
-3. **Install Python**:
+2. **Install Python**:
 
 
  Ensure Python is installed on your machine. You can download and install it from [python.org](https://www.python.org/downloads/).

@@ -8,6 +8,7 @@
  
 
 1. **GitHub Access Token**
+   
 The project contains dataset file fetched from GitHub on October 10, 2024. It requires an access token to obtain the issues data. I have already added mine, but if you need to fetch the latest data, you will have to use the GitHub API. To do this, you will need to obtain an "Access Token."
 
    to do this    
@@ -19,7 +20,7 @@ The project contains dataset file fetched from GitHub on October 10, 2024. It re
 
 
  
-2. **Install Python**:
+3. **Install Python**:
 
  Ensure Python is installed on your machine. You can download and install it from [python.org](https://www.python.org/downloads/).
  

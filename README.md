@@ -8,7 +8,12 @@
 2. **[Optional] Create a virtual environment**:  
    It’s recommended to create a virtual environment to keep your dependencies isolated. You can do this with the following command:
    ```bash
-   python -m venv env
+   python -m venv env ```
+   
+activate the virtual environment:
+on windows  ```bash .\env\Scripts\activate```
+on mac ```bash source env/bin/activate ```
+
 
 3.	**Install Requirements:**
 

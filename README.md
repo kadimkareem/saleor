@@ -20,8 +20,7 @@ on mac ```bash source env/bin/activate ```
 
     Install the necessary dependencies from the requirements.txt file by running
 
-   ```bash
-    pip install -r requirements.txt```
+   ```bash pip install -r requirements.txt```
 
 4.	**You can run any of the scripts in the terminal with:**
 

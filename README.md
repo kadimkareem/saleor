@@ -5,6 +5,9 @@
 
 
 
+
+
+
 1. **GitHub Access Token**
 The project contains an-issues dataset file fetched from GitHub on October 10, 2024. It requires an access token to obtain the issues data. I have already added mine, but if you need to fetch the latest data, you will have to use the GitHub API. To do this, you will need to obtain an "Access Token."
 
@@ -14,10 +17,17 @@ The project contains an-issues dataset file fetched from GitHub on October 10, 2
 
    ```json {"access_token": "your_github_token_here"}```
 
-1. **Install Python**:
+
+
+
+2. **Install Python**:
 
  Ensure Python is installed on your machine. You can download and install it from [python.org](https://www.python.org/downloads/).
  
+
+
+
+
 
 3. **[Optional] Create a virtual environment**: 
  
@@ -30,12 +40,19 @@ on mac ```bash source env/bin/activate ```
 
 
 
+
+
+
 4.	**Install Requirements:**
 
 
     Install the necessary dependencies from the requirements.txt file by running
 
    ```bash pip install -r requirements.txt```
+
+
+
+
 
 5.	**You can run any of the scripts in the terminal with:**
 
